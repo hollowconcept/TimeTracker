@@ -1,0 +1,15 @@
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\obj\Debug\Backend_TimeTracker.csproj.AssemblyReference.cache
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\obj\Debug\Backend_TimeTracker.csproj.CoreCompileInputs.cache
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\Backend_TimeTracker.dll.config
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\Backend_TimeTracker.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\Backend_TimeTracker.pdb
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\GlobalDefinitions_TimeTracker.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\PP2000.SendQueue.40.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\PP2000.SendQueue.Definitions.40.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\RestSharp.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\GlobalDefinitions_TimeTracker.pdb
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\bin\Debug\PP2000.SendQueue.40.dll.config
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\obj\Debug\Backend_TimeTracker.csproj.CopyComplete
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\obj\Debug\Backend_TimeTracker.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\Backend_TimeTracker\obj\Debug\Backend_TimeTracker.pdb

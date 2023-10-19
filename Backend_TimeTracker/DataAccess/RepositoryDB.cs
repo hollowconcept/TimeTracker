@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Backend_TimeTracker.DataAccess
 {
-    internal class RepositoryDB
+    public class RepositoryDB
     {
         public event OnErrorEventHandler OnError;
         public delegate void OnErrorEventHandler(string message);

@@ -1,0 +1,6 @@
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\GlobalDefinitions_TimeTracker\bin\Debug\GlobalDefinitions_TimeTracker.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\GlobalDefinitions_TimeTracker\bin\Debug\GlobalDefinitions_TimeTracker.pdb
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\GlobalDefinitions_TimeTracker\obj\Debug\GlobalDefinitions_TimeTracker.csproj.AssemblyReference.cache
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\GlobalDefinitions_TimeTracker\obj\Debug\GlobalDefinitions_TimeTracker.csproj.CoreCompileInputs.cache
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\GlobalDefinitions_TimeTracker\obj\Debug\GlobalDefinitions_TimeTracker.dll
+C:\Users\luke.zwerger\Desktop\TimeTracker-TimeTracker\GlobalDefinitions_TimeTracker\obj\Debug\GlobalDefinitions_TimeTracker.pdb

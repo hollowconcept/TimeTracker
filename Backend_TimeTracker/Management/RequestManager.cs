@@ -20,7 +20,7 @@ namespace Backend_TimeTracker.Management
             RequestDB = new RequestDB();
         }
 
-        public List<RequestProperty> GetRequests()
+        public static List<RequestProperty> GetRequests()
         {
             List<RequestProperty> listRequests = default;
 
@@ -36,7 +36,7 @@ namespace Backend_TimeTracker.Management
             return listRequests;
         }
 
-        public RequestProperty GetRequest(long requestId)
+        public static RequestProperty GetRequest(long requestId)
         {
             RequestProperty currentRequest = default;
 
@@ -52,73 +52,10 @@ namespace Backend_TimeTracker.Management
             return currentRequest;
         }
 
-        public int ApproveRequest(RequestProperty currentRequest, RequestWorkflowProperty currentRequestWorkFlow)
+
+        public static int ApprovalLevelRequest(RequestProperty currentRequest, RequestWorkflowProperty currentRequestWorkFlow)
         {
             int result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumInsert.Default;
-
-            try
-            {
-
-                result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumInsert.Success;
-            }
-            catch(Exception ex)
-            {
-                OnError($"RequestManager.ApproveRequest"); 
-            }
-
-            return result;
-        }
-
-        public int RejectRequest(RequestProperty currentRequest, RequestWorkflowProperty currentRequestWorkFlow)
-        {
-            int result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumInsert.Default;
-
-            try
-            {
-
-                result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumInsert.Success;
-            }
-            catch(Exception ex)
-            {
-                OnError($"RequestManager.RejectRequest {ex.Message}");
-            }
-
-            return result;
-        }
-
-        public int EditRequest(RequestProperty currentRequest)
-        {
-            int result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumUpdate.Default;
-
-            try
-            {
-                if (!RequestDB.UpdateRequest(currentRequest))
-                {
-                    result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumUpdate.Error;
-                }
-
-                result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumUpdate.Success;
-            }
-            catch(Exception ex)
-            {
-                OnError($"RequestManager.EditRequest {ex.Message}");
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Return Values:
-        /// Default : 0
-        /// Exists : 1
-        /// Error : 2
-        /// Success : 3
-        /// </summary>
-        public int AddWorkflowToRequest(RequestWorkflowProperty currentRequestWorkFlow)
-        {
-            int result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumInsert.Default;
-
-            RequestProperty currentRequest = default;
 
             try
             {
@@ -136,7 +73,28 @@ namespace Backend_TimeTracker.Management
             }
             catch(Exception ex)
             {
-                OnError($"RequestManager.AddWorkFlowToRequest {ex.Message}");
+                OnError($"RequestManager.ApproveRequest {ex.Message}"); 
+            }
+
+            return result;
+        }
+
+        public static int EditRequest(RequestProperty currentRequest)
+        {
+            int result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumUpdate.Default;
+
+            try
+            {
+                if (!RequestDB.UpdateRequest(currentRequest))
+                {
+                    result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumUpdate.Error;
+                }
+
+                result = (int)GlobalDefinitions_TimeTracker.Models.EnumProperty.EnumUpdate.Success;
+            }
+            catch(Exception ex)
+            {
+                OnError($"RequestManager.EditRequest {ex.Message}");
             }
 
             return result;

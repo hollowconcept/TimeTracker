@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Backend_TimeTracker.DataAccess
 {
-    public class CustomerrDB
+    public class CustomerDB
     {
         public event OnErrorEventHandler OnError;
         public delegate void OnErrorEventHandler(string message);
@@ -20,7 +20,7 @@ namespace Backend_TimeTracker.DataAccess
 
         public SQL SQLManager;
 
-        public CustomerrDB()
+        public CustomerDB()
         {
             SQLManager = new SQL();
 
@@ -99,6 +99,10 @@ namespace Backend_TimeTracker.DataAccess
                         if (!Convert.IsDBNull(customerTable.Rows[i]["ID"]))
                         {
                             currentCustomer.Id = Convert.ToInt64(customerTable.Rows[i]["ID"]);
+                        }
+                        if (!Convert.IsDBNull(customerTable.Rows[i]["RequestID"]))
+                        {
+                            currentCustomer.RequestId = Convert.ToInt64(customerTable.Rows[i]["RequestID"]);
                         }
                         if (!Convert.IsDBNull(customerTable.Rows[i]["InitiatorUserID"]))
                         {

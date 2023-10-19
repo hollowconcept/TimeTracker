@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\MailManager.cs" />
-    <Compile Include="DataAccess\CustomerrDB.cs" />
+    <Compile Include="DataAccess\CustomerDB.cs" />
     <Compile Include="DataAccess\ProjectDB.cs" />
     <Compile Include="DataAccess\RepositoryDB.cs" />
     <Compile Include="DataAccess\RequestDB.cs" />

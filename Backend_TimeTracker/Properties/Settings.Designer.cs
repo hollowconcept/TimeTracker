@@ -12,7 +12,7 @@ namespace Backend_TimeTracker.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,17 +20,6 @@ namespace Backend_TimeTracker.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SHDEST2W562\\SqlExpress;Initial Catalog=TimeTracker;Integrated Securit" +
-            "y=true")]
-        public string DBConnection {
-            get {
-                return ((string)(this["DBConnection"]));
             }
         }
         
@@ -67,6 +56,17 @@ namespace Backend_TimeTracker.Properties {
         public string SendClient {
             get {
                 return ((string)(this["SendClient"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SHDEST2W583\\SQLEXPRESS;Initial Catalog=TimeTracker;User ID=sa;Passwor" +
+            "d=@WageN#_2112")]
+        public string DBConnection {
+            get {
+                return ((string)(this["DBConnection"]));
             }
         }
     }

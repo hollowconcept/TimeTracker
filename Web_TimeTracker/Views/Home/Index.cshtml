@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Startseite";
+}
+
+@using (Html.BeginForm("AddEntry", "Home", FormMethod.Post, new { id = "AddEntry" }))
+{
+    @Html.AntiForgeryToken()
+    <section class="vh-100">
+        <div class="row">
+            <div class="card w-75">
+
+                <div class="col-12 justify-content-start">
+                    <container class="bg-white">
+                        <h6 class="text-muted border-bottom border-5 mt-4">ZEIT ERFASSEN</h6>
+                        <div class="row">
+                            <div class="col-6 ">
+                                <div class="input-group mt-4 mb-4">
+
+                                    <select class="form-select w-100 border-top-0 border-left-0 border-right-0" id="CustomerId" name="CustomerId" >
+                                        <option selected>* Kunde</option>
+                                        <option value="1">PP2000</option>
+                                        <option value="2">Bechtle</option>
+                                        <option value="3">Mercedes</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="input-group mt-4 mb-4">
+
+                                    <select class="form-select w-100 border-top-0 border-left-0 border-right-0" id="ProjectId" name="ProjectId">
+                                        <option selected>* Projekt</option>
+                                        <option value="1">Projekt1</option>
+                                        <option value="2">Projekt2</option>
+                                        <option value="3">Projekt3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="input-group mb-4 mx-3">
+
+                                <select class="form-select w-100 border-top-0 border-left-0 border-right-0" id="BusinessAreaId" name="BusinessAreaId">
+                                    <option selected>* Rolle</option>
+                                    <option value="1">Rolle1</option>
+                                    <option value="2">Rolle2</option>
+                                    <option value="3">Rolle3</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="input-group mb-4">
+
+                                    <input type="datetime-local" placeholder="* Datum" id="WorkingDate" name="WorkingDate" class="w-100 border-top-0 border-left-0 border-right-0" />
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="input-group mb-4">
+                                    <input type="number" placeholder="* Arbeitsstunden" id="WorkingHours" name="WorkingHours" class="w-100 border-top-0 border-left-0 border-right-0" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-12 mb-4">
+
+                            <input type="text" placeholder="Ausgeführte Tätigkeit" id="ExecutedActivity" name="ExecutedActivity" class="w-100 border-top-0 border-left-0 border-right-0" />
+                        </div>
+
+                        <div class="row mt-3 ms-2 mb-4">
+                            <div class=" col-6">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fa fa-bookmark text-light"></i>
+                                    Speichern
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                    Zurücksetzen
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-success">
+                                    <i class="fa fa-bookmark text-light"></i>
+                                    Als Template speichern
+                                </button>
+                            </div>
+                        </div>
+                    </container>
+                </div>
+            </div>
+
+            <div class="card w-25 h-50">
+                <div class="col-12 justify-content-end">
+                    <container class="bg-white col-4">
+                        <h6 class="text-muted border-bottom border-5">TEMPLATES</h6>
+                    </container>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+}
+
+
+

@@ -1,0 +1,289 @@
+﻿/* KeyFrames */
+-webkit-keyframes stretchdelay {
+    0%, 40%, 100%
+
+{
+    -webkit-transform: scaleY(0.4)
+}
+
+20% {
+    -webkit-transform: scaleY(1.0)
+}
+
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+    .grow:hover {
+        transform: scale(1.1);
+    }
+
+@-webkit-keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* / KeyFrames */
+
+/* Main */
+.openSideBar {
+    background: #000000;
+    border: 0px;
+    animation: fade 1s;
+}
+/* / Main */
+
+}
+/* SideBar Section */
+section.sideBar {
+    z-index: 100;
+}
+
+section.sideBar .sideBar-title {
+    background: #000000;
+    padding: 0.84em 0em 0.84em 1.3em;
+    border-bottom: 1px solid #E6E7E8;
+}
+
+section.sideBar .sideBar-title #sideBarTitle {
+    padding: 0;
+    margin: 0;
+}
+
+section.sideBar .title {
+    font-weight: 300;
+    font-size: 14px;
+    font-family: unquote("Roboto");
+    text-transform: uppercase;
+    margin-bottom: 0.1em;
+    margin-top: 0.9em;
+    padding-left: 1.2em;
+    letter-spacing: 0.15em;
+    color: #DEE0E2;
+}
+
+section.sideBar .navActive {
+    background-image: linear-gradient(to right, #151515 20%, #1C1C1C 90%);
+    border-left: 2px solid white;
+    border-radius: 0px;
+    padding: 0.4em 0em 0.4em 1.3em;
+}
+
+section.sideBar a {
+    font-size: 17px;
+    padding: 0.10em 0em 0.10em 1.3em;
+    color: white;
+}
+
+section.sideBar a p {
+    margin-left: 1em;
+}
+
+section.sideBar i {
+    font-size: 21px;
+}
+
+section.sideBar hr {
+    background: gray;
+}
+/* / SideBar Section */
+
+/* Content Section */
+section.content {
+    width: 100%;
+    background: radial-gradient(ellipse at bottom, #F2F2F2 0%, #f9f9fa 100%);
+}
+
+section nav {
+    background: #F0EFEF;
+    border-bottom: 2px solid #E2E2E2;
+}
+
+section nav.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.5);
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1em;
+}
+
+section.content .header-message {
+    padding: 0em 1em 0em 1em;
+    color: white;
+    background-image: linear-gradient(to right, #0A122A 20%, #0B6121 90%);
+}
+
+section.content .header-message .d-flex > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section.content .header-message .header-message-text {
+    padding-left: 1em;
+}
+
+section.content .header-message .header-message-text .header-message-title {
+    margin-top: 0.4em;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+section.content .header-message .header-message-text .header-message-description {
+    font-size: 13px;
+}
+
+section.content .button-execute a {
+    text-decoration: none;
+    color: white;
+}
+
+section.content .header-message-icon i {
+    line-height: 53px;
+    color: white;
+}
+
+section.content .header-top {
+    border-bottom: 1px solid #E6E7E8;
+}
+
+section.content .header-top-left .button-execute {
+    font-size: 16px;
+    color: #252525;
+    border-right: 1px solid #E5E5E5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+
+section.content .header-top .button-execute i {
+    cursor: pointer
+}
+
+section.content .header-top .button-execute a {
+    text-decoration: none;
+    color: black;
+}
+
+section.content .header-top-right .login-panel {
+    font-size: 14px;
+    color: #252525;
+    display: inline-block;
+    padding-left: 20px;
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+
+section.content .header-top-right .top-language {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-right: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
+}
+
+/* / Content Section */
+
+

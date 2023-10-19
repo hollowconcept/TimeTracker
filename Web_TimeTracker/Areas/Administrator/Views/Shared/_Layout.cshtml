@@ -1,0 +1,175 @@
+﻿@using Web_TimeTracker.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - TimeTracker</title>
+
+    <!-- CSS -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.timetrackeriq.com/Images/TimeTracker/timetrackerlogo.svg">
+    <link href="https://cdn.kendostatic.com/2022.2.621/styles/kendo.bootstrap-main.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Content.css")" rel="stylesheet" type="text/css" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.kendostatic.com/2022.2.621/js/jquery.min.js"></script>
+    <script src="https://cdn.kendostatic.com/2022.2.621/js/jszip.min.js"></script>
+    <script src="https://cdn.kendostatic.com/2022.2.621/js/kendo.all.min.js"></script>
+    <script src="https://cdn.kendostatic.com/2022.2.621/js/kendo.aspnetmvc.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="https://cdn.kendostatic.com/2022.2.621/js/cultures/kendo.culture.de-DE.min.js"></script>
+
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Script.js")"></script>
+
+    <!-- Fontawesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Lobster Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+    <!-- Sans Serif Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300" rel="stylesheet" type="text/css">
+
+
+
+</head>
+<body>
+    <main>
+        <button class="openSideBar d-block d-md-none" onclick="openSideBar()" id="sideBarButton"><i class="fa fa-angle-double-right text-light"></i></button>
+
+        <section class="sideBar d-none d-md-block" id="sideBar">
+            <div class="d-flex flex-column flex-shrink-0 p-0 text-white" style="width: 280px; min-height: 100%; background: #000000 ">
+                <div class="sideBar-title">
+                    <h4 id="sideBarTitle"><i class="fa fa-clock-o"></i> TimeTracker</h4>
+                </div>
+                <div class="d-flex flex-column justify-content-between pre-scrollable" style="min-height: calc(100vh - 150px)">
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="title pb-1">
+                            Mein Profil
+                        </li>
+                        <li class="pt-1">
+                            <a href="@Url.Action("Dashboard", "Overview", new { area = "Administrator" }, null)" class="nav-link text-light h6 @Html.IsActive("Overview", "Dashboard")">
+                                <i class="fa fa-home text-light"></i>
+                                <p class="d-inline">Startseite</p>
+                            </a>
+                        </li>
+
+                        <li class="pt-1 nav-item dropdown" role="button">
+                            <a href="#" class="nav-link dropdown-toggle text-light h6" role="button" data-bs-toggle="dropdown" id="dropdown" aria-expanded="false">
+                                <i class="fa fa-archive text-light"></i>
+
+                                <p class="d-inline">Anträge</p>
+                                <ul class="dropdown-menu" id="dropdown" aria-labelledby="dropdown" data-target="dropdown">
+                                    <li><a class="dropdown-item" href="ProjektAntrag">Projektantrag erstellen</a></li>
+                                    <li><a class="dropdown-item" href="KundenAntrag">Kundenantrag erstellen</a></li>
+                                    <li><a class="dropdown-item" href="AntragsÜbersicht">Antrags Übersicht</a></li>
+                                </ul>
+                            </a>
+
+                        </li>
+                        <li class="pt-1 nav-item has-submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-light h6 @Html.IsActive("", "")" role="button" data-bs-toggle="dropdown">
+                                <i class="fa fa-clock-o text-light"></i>
+                                <p class="d-inline">Zeiten</p>
+                                <ul class="dropdown-menu has-submenu has-submenu collapse">
+                                    <li><a class="dropdown-item nav-link" href="@Url.Action("", "", new { area = "" }, null)">Zeit erfassen</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Zeiten Übersicht">Zeiten Übersicht</a></li>
+                                </ul>
+                            </a>
+                        </li>
+
+                        <li class="title pb-1">
+                            Administration
+                        </li>
+                        <li class="pt-1">
+                            <a href="@Url.Action("", "", new { area = "" }, null)" class="nav-link text-light h6 @Html.IsActive("", "")">
+                                <i class="fa fa-clock-o text-light"></i>
+                                <p class="d-inline">Alle Zeiten</p>
+                            </a>
+                            <a href="@Url.Action("", "", new { area = "" }, null)" class="nav-link text-light h6 @Html.IsActive("", "")">
+                                <i class="fa fa-file text-light"></i>
+                                <p class="d-inline">Auswertungen</p>
+                            </a>
+                            <a href="@Url.Action("", "", new { area = "" }, null)" class="nav-link text-light h6 @Html.IsActive("", "")">
+                                <i class="fa fa-archive text-light"></i>
+                                <p class="d-inline">Alle Anträge</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="header-top d-flex bg-white">
+                <div class="container-fluid">
+                    <div class="header-top-left float-left">
+                    </div>
+                    <div class="header-top-right float-right">
+                        <div class="login-panel float-right">
+                            <img src="~/Content/Web/Images/User.png" height="20" style="border-radius:20em" />
+
+                            <button class="btn btn-sm dropdown-toggle p-0 pl-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ernad Jakupovic
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="btn" href="@Url.Action("Logout", "Secure", new { area = "" }, null)" role="button"><i class="fa fa-sign-out"></i> Abmelden</a>
+                            </div>
+                        </div>
+                        <div class="top-language float-right">
+                            <img src="https://images.vexels.com/media/users/3/164056/isolated/preview/56f4034aadb54a8f811fe73fd9352813-deutschland-flaggensprache-icon-kreis-by-vexels.png" height="20" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mt-4">
+                @RenderBody()
+            </div>
+
+            <footer class="fixed-bottom" id="footer">
+                <div class="container text-center" id="footer-text">
+                    &copy; PP 2000 GmbH | TimeTracker <small>v0.0.1</small> | Ernad Jakupovic
+                </div>
+            </footer>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.sidebar .nav-link').forEach(function (element) {
+
+                element.addEventListener('click', function (e) {
+
+                    let nextEl = element.nextElementSibling;
+                    let parentEl = element.parentElement;
+
+                    if (nextEl) {
+                        e.preventDefault();
+                        let mycollapse = new bootstrap.Collapse(nextEl);
+
+                        if (nextEl.classList.contains('show')) {
+                            mycollapse.hide();
+                        } else {
+                            mycollapse.show();
+                            // find other submenus with class=show
+                            var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+                            // if it exists, then close all of them
+                            if (opened_submenu) {
+                                new bootstrap.Collapse(opened_submenu);
+                            }
+                        }
+                    }
+                }); // addEventListener
+            }) // forEach
+        });
+    </script>
+</body>
+</html>
